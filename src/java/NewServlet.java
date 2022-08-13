@@ -98,28 +98,43 @@ public class NewServlet extends HttpServlet {
                     + "                    </form>\n"
                     + "                </div>\n"
                     + "            </nav>");
-            out.println("<div class=\"mx-auto mt-5\" style=\"width: 600px;\">\n");
-            out.println("<div class=\"shadow-lg p-3 mb-5 bg-white rounded\">"
-                    + "<h4 class=\"display-4 mt-5 mx-5\">Datos de Usuario</h4>"
-                    + "<dl class=\"row my-5 mx-5\">\n"
-                    + "  <dt class=\"col-sm-3\">Nombre </dt>\n"
-                    + "  <dd class=\"col-sm-9\"> " + libros.getNombre() + "</dd>\n"
-                    + "\n"
-                    + "  <dt class=\"col-sm-3\">Código</dt>\n"
-                    + "  <dd class=\"col-sm-9\">\n"
-                    + "    <p>" + libros.getCodigo() + "</p>\n"
-                    + "  </dd>\n"
-                    + "\n"
-                    + "  <dt class=\"col-sm-3\">Tipo de tapa</dt>\n"
-                    + "  <dd class=\"col-sm-9\">" + libros.getTapa() + "</dd>\n"
-                    + "\n"
-                    + "  <dt class=\"col-sm-3 text-truncate\">Editorial</dt>\n"
-                    + "  <dd class=\"col-sm-9\">" + libros.getEditorial() + "</dd>\n"
-                    + "\n"
-                    + "<dt class=\"col-sm-3\">Año</dt>\n"
-                    + "  <dd class=\"col-sm-9\">" + libros.getAño() + "</dd>\n"
-                    + "<a class=\"btn btn-primary\" href=\"index.html\" role=\"button\">Registrar otro cliente</a>"
-                    + "</div>");
+            
+            out.println("<div class=\"mx-auto\" style=\"width:1200px;\">\n"
+                    + " <div class=\"shadow-lg p-3 mb-5 bg-white rounded\">"
+                    + " <h2 class=\"mt-5 mx-5\">Historial de Registros</h2>"
+                    + " <table class=\"table table-hover\"my-5\" \"mx-5\"\">\n"
+                    + "  <thead>\n"
+                    + "    <tr>\n"
+                    + "      <th scope=\"col\">No.</th>\n"
+                    + "      <th scope=\"col\">Codigo</th>\n"
+                    + "      <th scope=\"col\">Nombre</th>\n"
+                    + "      <th scope=\"col\">Tipo de tapa</th>\n"
+                    + "      <th scope=\"col\">Editorial</th>\n"
+                    + "      <th scope=\"col\">Año</th>\n"
+                    + "    </tr>\n"
+                    + "  </thead>\n");
+            out.println("<tbody>");
+
+            for (int i = 0; i < vector.length; i++) {
+                iterador = iterador + 1;
+                if (!vector[i].getNombre().isEmpty()) {
+                    out.println("<tr>\n"
+                            + "      <th scope=\"row\">" + iterador + "</th>\n"
+                            + "      <td>" + vector[i].getCodigo()+ "</td>\n"
+                            + "      <td>" + vector[i].getNombre() + "</td>\n"
+                            + "      <td>" + vector[i].getCodigo() + "</td>\n"
+                            + "      <td>" + vector[i].getTapa() + "</td>\n"
+                            + "      <td>" + vector[i].getEditorial() + "</td>\n"
+                            + "      <td>" + vector[i].getAño() + "</td>\n");
+                    out.println("<td>"
+                            + "<button type=\"button\" class=\"btn btn-warning\"></i>Editar</button> "
+                            + "<button type=\"button\" class=\"btn btn-danger\">Eliminar</button>"
+                            + "</td>" + "    </tr>\n");
+                }
+            }
+            out.println("  </tbody>");
+            out.println("</table><br><br>");
+            out.println("</div></div>");
             out.println("</div>");
             out.println("</body>");
             out.println("</html>");
