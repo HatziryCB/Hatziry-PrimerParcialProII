@@ -19,9 +19,11 @@ import jakarta.servlet.http.HttpServletResponse;
  */
 @WebServlet(urlPatterns = {"/NewServlet"})
 public class NewServlet extends HttpServlet {
+
     Libros libros;
     RegistroLibro registrolibro;
     Libros[] vector;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -35,11 +37,18 @@ public class NewServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
+            libros = new Libros(
+                    Integer.parseInt(request.getParameter("codigo")),
+                    request.getParameter("nombre"),
+                    request.getParameter("tapa"),
+                    request.getParameter("editorial"),
+                    Integer.parseInt(request.getParameter("año")));
+            
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
+            out.println("<title>Servlet NewServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
