@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .container-principal{
+                background-image: url(https://www.xtrafondos.com/wallpapers/resized/lineas-neon-brillando-abstracto-9697.jpg?s=large);
+                background-size: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">
+                    <img src="https://icon-library.com/images/home-icon-png/home-icon-png-28.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    Home
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Link1 <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Link2</a>
+                        </li>
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                Categorías
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link disabled">Link3</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Busqueda" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </nav>    
+        </div>
+        <div>
+            <div class="container-principal">
+                <div class="mx-auto" style="width: 600px">
+                    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                        <div class="mt-5">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1363/1363692.png" width="140" height="140" class="rounded mx-auto d-block mt-6">
+                        </div>
+                        <div class="mx-auto mt-5" style="width: 600px">
+                            <h1 class="display-4">Registro web de libros</h1>
+                        </div>
+                        <form action="NewServlet">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="codigo">Código</label>
+                                    <input type="int" class="form-control" placeholder="0123" name="codigo">
+                                </div>
+                                <div class="col">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" class="form-control" placeholder="Ejem. El principito" name="nombre">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputState">Tipo de tapa</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Tapa dura</option>
+                                    <option>Tapa blanda</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="editorial">Editorial</label>
+                                    <input type="text" class="form-control" placeholder="Ejem. Alfaguara" name="editorial">
+                                </div>
+                                <div class="col">
+                                    <label for="año">Año de publicación</label>
+                                    <input type="text" class="form-control" placeholder=" Ejem. 2019" name="año">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mx-2 my-4">Registrar</button>
+                            <button type="reset" class="btn btn-warning mx-2 my-4">Vaciar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
