@@ -21,7 +21,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class NewServlet extends HttpServlet {
 
     Libros libros;
-    RegistroLibro registrolibro;
+    RegistroLibro registroLibro;
     Libros[] vector;
 
     /**
@@ -44,6 +44,12 @@ public class NewServlet extends HttpServlet {
                     request.getParameter("editorial"),
                     Integer.parseInt(request.getParameter("año")));
             
+            if (registroLibro == null) {
+                registroLibro = new RegistroLibro();
+            }
+            registroLibro.almacenar(libros);
+            vector = registroLibro.mostrar();
+            int iterador = 0;
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
