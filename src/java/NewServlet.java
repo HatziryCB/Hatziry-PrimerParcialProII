@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
+import JavaClass.Libros;
+import JavaClass.RegistroLibro;
 import jakarta.servlet.annotation.WebServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,7 +19,9 @@ import jakarta.servlet.http.HttpServletResponse;
  */
 @WebServlet(urlPatterns = {"/NewServlet"})
 public class NewServlet extends HttpServlet {
-
+    Libros libros;
+    RegistroLibro registrolibro;
+    Libros[] vector;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.

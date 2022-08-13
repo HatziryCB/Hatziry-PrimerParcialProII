@@ -17,6 +17,13 @@ public class RegistroLibro {
         this.indice = 0;
     }
     
+    public void almacenar(Libros libro){
+        this.vectorLibros[indice]=libro;
+        this.indice=indice+1;
+    }
     
+    public Libros[] mostrar(){
+        return this.vectorLibros;
+    }
 }
 
